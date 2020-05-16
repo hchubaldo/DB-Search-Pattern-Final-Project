@@ -29,3 +29,21 @@ while(id):
     
 inFile.close()  # Closes the infile
 outFile.close() # Closes the outFile
+
+# This block of code pretty much does the same thing as the code above but
+# instead of putting each accession number into its own fasta file this
+# puts it all into one file so that it can be used with MUSCLE
+inFile = open("ID_LIST.txt", "r")
+type = "fasta"
+outputFile = "bigFile."+type
+f = open(outputFile,"w")
+id = inFile.readline()
+while(id):
+    id = id.strip("\n")
+    fetch_handle = Entrez.efetch(db="nucleotide", id=id, rettype=type, retmode="text")
+    data=fetch_handle.read()
+    fetch_handle.close()
+    f.write(data)
+    id = inFile.readline()
+inFile.close()  # Closes the infile
+f.close() # closes the bigFile
