@@ -1,7 +1,7 @@
 # DB-Search-Pattern-Final-Project
 This repository contains my final project for DB Search Patterns
 
-The accession numbers that are needed for the entrezPull.py script are in the ID_LIST.txt file.
+The accession numbers that are needed for the **entrezPull.py** script are in the **ID_LIST.txt** file.
 
 Make sure that **ID_LIST.txt** and **entrezPull.py** are in the same directory.
 >This block of code is used to generate a large fasta file (named bigFile.fasta) that has the genome of the 9 bacteria.  
